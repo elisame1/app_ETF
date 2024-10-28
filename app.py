@@ -2,8 +2,6 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-import yfinance as yf
-from datetime import datetime, timedelta
 import seaborn as sns
 
 from functions import get_etf_data, get_multietf_data, get_stat_string

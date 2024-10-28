@@ -181,12 +181,12 @@ if not selected_comparison_etfs:
 
     # Desviación Estándar
     st.subheader("Standard Deviation")
-    std_anual_ind = rendimiento_select_etf.std() * np.sqrt(250) * 100
-    st.markdown(f"<h4 style='color: #FF85A1;'>{std_anual_ind:.2f}%</h4>", unsafe_allow_html=True)
+    std_anual_ind = rendimiento_select_etf.std() * np.sqrt(250) 
+    st.markdown(f"<h4 style='color: #FF85A1;'>{std_anual_ind:.2f}</h4>", unsafe_allow_html=True)
 
     # Varianza
     st.subheader("Variance")
-    var_anual_ind = rendimiento_select_etf.var() * 250 * 100
+    var_anual_ind = rendimiento_select_etf.var() * 250 
     st.markdown(f"<h4 style='color: #FF85A1;'>{var_anual_ind:.2f}</h4>", unsafe_allow_html=True)
 
 ############
@@ -197,13 +197,13 @@ else:
     rend_diario = rendimientos_etfs.mean()
     rend_anual = rend_diario * 250 * 100
     std_anual = rendimientos_etfs.std() * 250 ** 0.5
-    var_anual = rendimientos_etfs.var() * 250 * 100
+    var_anual = rendimientos_etfs.var() * 250 
 
     # Crear un DataFrame con todas las métricas
     metricas_df = pd.DataFrame({
         'Annual Performance (%)': rend_anual,
-        'Standard Deviation (%)': std_anual,
-        'Variance (%)': var_anual
+        'Standard Deviation': std_anual,
+        'Variance': var_anual
     })
 
     # Formatear los números para mejor visualización
